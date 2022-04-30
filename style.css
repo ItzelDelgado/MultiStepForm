@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    color: #6F6C90;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 5vw;
+}
+
+.title-container {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.title-container h1 {
+    font-size: 34;
+    color: #170F49;
+}
+
+.title-container p {
+    max-width: 65%;
+    margin: 0 auto;
+}
+
+.form {
+    background: #FFFFFF;
+    border: 1px solid #EFF0F7;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 16px rgb(8 15 52 / 6%);
+    border-radius: 34px;
+    width: 698px;
+    height: 606px;
+    padding: 20px;
+}
+
+.form-step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+}
+
+.form-step-active{
+    display: flex;
+}
+
+@keyframes animate {
+    from{
+        transform: scale(1,0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1,1);
+        opacity: 1;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+    background: #4A3AFF;
+    box-shadow: 0px 3px 12px rgb(74 58 255 / 18%);
+    border-radius: 56px;
+    position: static;
+    width: 160px;
+    height: 20px;
+    color: #FFFFFF;
+    font-weight: 500;
+    margin: 0px 8px;
+    text-decoration: none;
+}
+
+.btn-next {
+    position: absolute;
+    right: 130px;
+    bottom: -85px;
+}
+
+.btn-prev{
+    position: absolute;
+    left: 130px;
+    bottom: -85px;
+    flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 0px;
+background-color: white;
+border: 1px solid #4A3AFF;
+color: #4A3AFF;
+}
+
+.btn-group{
+    display: flex;
+}
+.form-step-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 18px 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.input-group input {
+    border: 0;
+}
+
+.input-group-input {
+    display: flex;
+    background: #FFFFFF;
+    /* Neutral/300 */
+
+    border: 1px solid #EFF0F7;
+    box-sizing: border-box;
+    /* Input/Default */
+
+    box-shadow: 0px 2px 6px rgba(19, 18, 66, 0.07);
+    border-radius: 46px;
+    padding: 12px;
+}
+
+.service-group{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #FFFFFF;
+    border: 1px solid #EFF0F7;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 6px rgb(19 18 66 / 7%);
+    border-radius: 16px;
+    width: 270px;
+    height: 110px;
+    padding-left: 20px;
+    gap: 14px;
+}
+
+.service-group:hover{
+    /* Primary/Color 1 */
+
+    border: 2px solid #4A3AFF;
+    box-sizing: border-box;
+    /* Input/Focus */
+
+    box-shadow: 0px 2px 11px rgba(69, 65, 164, 0.06), 0px 4px 10px rgba(31, 37, 89, 0.07);
+    border-radius: 16px;
+}
+
+.service-group p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #170F49;
+}
+.line-gray {
+    border: 1px solid #D9DBE9;
+    width: 596.26px;
+}
+
+/* Progressbar */
+
+.progressbar::before, .progress{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+}
+
+.progress{
+    background-color:#4A3AFF ;
+    width: 0%;
+}
+
+.progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 18px 0;
+}
+
+.progress-step {
+    width: 34px;
+    height: 34px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+}
+
+.progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+    z-index: 1;
+}
+
+.progress-step-active{
+    background-color: #4A3AFF;
+    color: white;
+    
+    
+}
+
+
+
+.footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 14vw;
+    margin-bottom: 2vw;
+    border-top: 1px solid #D9DBE9;
+}
+
+.enter-mail {
+    display: flex;
+    background: #FFFFFF;
+    /* Neutral/300 */
+    border: 1px solid #EFF0F7;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 25px rgba(13, 10, 44, 0.06);
+    border-radius: 60px;
+    padding: 5px 20px;
+}
+
+.enter-mail input{
+    border: 0;
+}
+
+.h2-title{
+    font-weight: 700;
+    font-size: 24px;
+    color: #170F49;
+}
+
+.line-progress{
+    margin-top: 30px;
+    border-top: 1px solid #D9DBE9;
+}
+
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 3px solid white;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    background: #FFFFFF;
+/* Neutral/400 */
+
+border: 1.2px solid #D9DBE9;
+box-sizing: border-box;
+box-shadow: inset 0px -3px 7px rgba(20, 20, 43, 0.08);
+}
+
+.checkbox-round:checked {
+    background-color: #4A3AFF;
+}
+
+.submit{
+    text-align: center;
+    /* margin: 0 auto; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.submit p {
+    max-width: 71%;
+}
+
+@media (max-width: 600px) {
+    .form{
+        width: 100%;
+    }
+
+    .footer{
+        display: block;
+        margin-top: 59vw;
+        text-align: center;
+    }
+    .form-step-grid{
+        display: block;
+    }
+    .header{
+        display: flex;
+        margin: 20px;
+        flex-direction: column;
+        text-align: center;
+        
+        align-items: center;
+    }
+
+    .btn-next{
+        right: 9px;
+        bottom: -155px;
+    }
+
+    .btn-prev{
+        left: 12px;
+        bottom: -155px;
+    }
+}
